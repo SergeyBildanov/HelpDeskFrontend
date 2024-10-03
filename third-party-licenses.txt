@@ -1,0 +1,10 @@
+This file was generated with the generate-license-file npm package!
+https://www.npmjs.com/package/generate-license-file
+
+This app was build with credit card icons from https://www.freeimages.com/
+MIR icon by Icons8
+
+-----------
+
+This file was generated with the generate-license-file npm package!
+https://www.npmjs.com/package/generate-license-file
