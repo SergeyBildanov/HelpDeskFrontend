@@ -1,0 +1,136 @@
+body {
+    background-color: dodgerblue;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.btn{
+    background-color: green;
+    border-radius: 10%;
+    box-sizing: border-box;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    color: bisque;
+    margin-bottom: 20px;
+}
+.widget{
+    box-sizing: border-box;
+    width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.ticket-list{
+    display: block;
+    width: 100%;
+}
+.ticket{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: solid 5px white;
+    height: 100%;
+}
+.header{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+.description{
+    width: 100%;
+    color: white;
+}
+.name{
+    width:200px;
+    color: white;
+}
+.delete{
+    width: 16px;
+    fill: white;
+}
+.edit{
+    width: 16px;
+    fill: white;
+}
+.checkbox{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+.checkbox:checked {
+    background-color: gray;
+    background-image: url("https://static.tildacdn.com/tild6263-6636-4835-b731-326263643736/check-mark-png-black.png");
+    background-size: cover;
+}
+.ticket-btns{
+    display: flex;
+    align-items: center;
+}
+.btns{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hidden{
+    visibility: hidden;
+}
+.modal{
+    box-sizing: border-box;
+    position: absolute;
+    top: center;
+    left: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 200px;;
+    padding: 10px;
+    background-color: azure;
+
+}
+.h{
+    text-align: center;
+}
+.close-btn{
+    text-align: center;
+    width: 60px;
+    border: 2px solid black;
+}
+.ok-btn{
+    text-align: center;
+    width: 60px;
+    border: 2px solid black;
+}
+#add-form{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+}
+#change-form{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+}
+#name{
+    height:25px
+}
+#ticket-description{
+    min-height:50px;
+    max-height: 100px;
+    min-width: 100%;
+    max-width: 100%;
+}
+.date{
+    color: white;
+}
