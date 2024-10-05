@@ -21,21 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
       changeModal.classList.remove("hidden");
       changeModal.dataset.id = e.target.closest(".ticket").dataset.id;
     }
-    if(e.target === e.target.closest(".ticket").querySelector(".checkbox")){
+    if (e.target === e.target.closest(".ticket").querySelector(".checkbox")) {
       e.preventDefault();
       let data;
-      debugger
-      if(e.target.checked === true){
+      if (e.target.checked === true) {
         data = {
-        status: true, 
-      }
-      }
-      else{
+          status: true,
+        };
+      } else {
         data = {
-          status: false, 
-        }
+          status: false,
+        };
       }
-      let xhr = sendRequest("changeTicket", e.target.closest(".ticket").dataset.id, JSON.stringify(data));
+      let xhr = sendRequest(
+        "changeTicket",
+        e.target.closest(".ticket").dataset.id,
+        JSON.stringify(data),
+      );
       xhr.addEventListener("load", () => {
         if (xhr.status >= 200 && xhr.status < 300) {
           try {
@@ -83,7 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
       let formData = new FormData(form);
       form.reset();
       addModal.classList.add("hidden");
-      let xhr = sendRequest("createTicket", id=null, formData);
+      let id = null;
+      let xhr = sendRequest("createTicket", id, formData);
       xhr.addEventListener("load", () => {
         if (xhr.status >= 200 && xhr.status < 300) {
           try {
@@ -160,7 +163,7 @@ function drawTickets(ticketList) {
   });
 }
 function drawTicket(ticketList, ticket) {
-  if(ticket.status){
+  if (ticket.status) {
     ticketList.insertAdjacentHTML(
       "beforeEnd",
       `<div class="ticket" data-id=${ticket.id}>
@@ -205,25 +208,23 @@ function drawTicket(ticketList, ticket) {
   );
   return;
 }
-function sendRequest(method, id, data){
+function sendRequest(method, id, data) {
   let url = "http://localhost:1001";
   let requestMethod;
   let requestUrl;
-  if(["createTicket", "changeTicket"].includes(method)){
-    requestMethod="POST";
-  }
-  else{
+  if (["createTicket", "changeTicket"].includes(method)) {
+    requestMethod = "POST";
+  } else {
     requestMethod = "GET";
   }
-  if(id){
-    requestUrl = `${url}?method=${method}&id=${id}`
-  }
-  else{
-    requestUrl = `${url}?method=${method}`
+  if (id) {
+    requestUrl = `${url}?method=${method}&id=${id}`;
+  } else {
+    requestUrl = `${url}?method=${method}`;
   }
   let xhr = new XMLHttpRequest();
   xhr.open(requestMethod, requestUrl);
-  if(requestMethod === "GET"){
+  if (requestMethod === "GET") {
     xhr.send();
     return xhr;
   }
